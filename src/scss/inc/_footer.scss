@@ -1,0 +1,76 @@
+footer {
+  background-color: #EEEEEE;
+  padding: 80rem;
+
+  .txt-bula {
+    font-size: 24rem;
+    margin-bottom: 32rem;
+
+    a {
+      color: #006FFF;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .txt-disclaimer {
+    font-weight: 400;
+    font-size: 16rem;
+    margin-bottom: 63rem;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .links {
+      font-weight: 400;
+      font-size: 14rem;
+      margin: 0;
+      width: fit-content;
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        font-family: $font-GSKPrecision;
+        font-weight: 400;
+        font-size: 14rem;
+        text-align: center;
+        margin-bottom: 7rem;
+
+        &.center__2 {
+          font-weight: 700;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .logo-gsk {
+      width: 138rem;
+      height: auto;
+    }
+  }
+}

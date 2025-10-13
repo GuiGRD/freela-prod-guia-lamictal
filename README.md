@@ -1,1 +1,0 @@
-# freela-prod-guia-lamictal

@@ -1,0 +1,189 @@
+.section-slides-epilepsia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: none;
+
+  .slide {
+    position: absolute;
+    top: 45rem;
+    left: 531rem;
+    width: 1270rem;
+    display: none;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: visible;
+
+      h3 {
+        margin-bottom: 16rem;
+      }
+
+      .breadcrumb {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        margin-bottom: 35rem;
+
+        span {
+          font-family: $font-GSKPrecision;
+          font-weight: 400;
+          font-size: 20rem;
+          color: $color-blue;
+          margin-right: 16rem;
+          padding: 12rem 27rem;
+          border: solid 2rem $color-blue;
+          border-radius: 10rem;
+          white-space: nowrap;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 671rem;
+        min-height: 671rem;
+        transition: all .3s ease-in-out;
+
+        .table {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 253rem 276rem 721rem;
+          gap: 10rem;
+          margin-bottom: 19rem;
+
+          &__item {
+            padding: 24rem 48rem;
+            border-radius: 16rem;
+            background-color: $color-secondary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+              font-weight: 300;
+              font-size: 24rem;
+              text-align: center;
+              margin: 0;
+            }
+
+            &--header {
+              background-color: $color-blue;
+
+              p {
+                color: $color-secondary;
+                font-weight: 100;
+
+                strong {
+                  font-weight: 400;
+                }
+              }
+            }
+
+            &--left {
+              justify-content: flex-start;
+
+              p {
+                text-align: left;
+                font-size: 23rem;
+              }
+            }
+          }
+        }
+
+        .txt-ref {
+          font-weight: 300;
+          font-size: 14rem;
+          width: 1065rem;
+          margin-bottom: 1em;
+          margin-left: auto;
+        }
+
+        .btn-content {
+          padding: 16rem 32rem;
+          background: $color-blue;
+          border: none;
+          border-radius: 16rem;
+          color: $color-secondary;
+          font-family: $font-GSKPrecision;
+          font-weight: 700;
+          font-size: 24rem;
+          cursor: pointer;
+          transition: all .3s ease-in-out;
+          margin-top: auto;
+          
+          &:hover {
+            background: #113164;
+          }
+        }
+
+        .box {
+          background-color: $color-secondary;
+          border-radius: 16rem;
+          padding: 36rem 29rem 36rem 39rem;
+          min-height: 546rem;
+          margin-bottom: 62rem;
+          filter: drop-shadow(5rem 5rem 12rem rgb(0, 0, 0, 0.1));
+          border: solid 1rem #D6D6D6;
+          width: 100%;
+
+          p {
+            font-weight: 300;
+            font-size: 20rem;
+            margin: 0;
+          }
+
+          .line {
+            background-color: #D6D6D6;
+            width: 98%;
+            height: 2rem;
+            margin: 24rem auto;
+          }
+
+          &--2 {
+            margin-top: 101rem;
+            height: auto;
+            min-height: auto;
+          }
+        }
+
+        &--1 {
+          transition-delay: 0.3s;
+        }
+
+        &--2 {
+          position: absolute;
+          left: 0;
+          top: 181rem;
+          transform: translateY(10%);
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &.switch {
+      .content--1 {
+        opacity: 0;
+        pointer-events: none;
+        transition-delay: 0s;
+      }
+
+      .content--2 {
+        transform: translateY(0%);
+        opacity: 1;
+        pointer-events: all;
+        transition-delay: 0.3s;
+      }
+    }
+  }
+}

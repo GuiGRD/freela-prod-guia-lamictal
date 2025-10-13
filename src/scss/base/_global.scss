@@ -1,0 +1,320 @@
+body {
+  background-color: $color-secondary;
+  color: $color-primary;
+  font-family: $font-GSKPrecision;
+  overflow-x: hidden;
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+
+    &__blue {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: 100% 100%;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+
+    &__yellow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: 100% 100%;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &.epilepsia {
+    background-color: $color-secondary;
+
+    .bg__yellow {
+      opacity: 1;
+    }
+
+    .bg__blue {
+      opacity: 0;
+    }
+  }
+
+  &.bipolar {
+    background-color: $color-secondary;
+
+    .bg__blue {
+      opacity: 1;
+    }
+
+    .bg__yellow {
+      opacity: 0;
+    }
+  }
+}
+
+html,
+body {
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  font-size: 0.0520833333333333vw;
+}
+
+.container {
+  width: 100%;
+  height: 918rem;
+  overflow: hidden;
+  position: relative;
+}
+
+sup {
+  font-size: 0.6em;
+  line-height: 1em;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+h1 {
+  background: #2061C8;
+  background: linear-gradient(90deg, rgba(32, 97, 200, 1) 0%, rgba(29, 67, 128, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: $font-Museo;
+  font-weight: 900;
+  font-size: 90rem;
+  margin-bottom: 0.17em;
+}
+
+h2 {
+  font-family: $font-Museo;
+  font-weight: 900;
+  text-align: center;
+  color: $color-primary;
+  width: 10em;
+  margin-bottom: 16rem;
+  font-size: 64rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: $color-blue;
+  font-family: $font-Museo;
+  font-size: 64rem;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: $color-primary;
+  font-family: $font-GSKPrecision;
+  font-weight: 300;
+  font-size: 28rem;
+  line-height: normal;
+  margin-bottom: 1em;
+}
+
+.img-logo {
+  width: 135rem;
+  height: auto;
+  position: absolute;
+  top: 34rem;
+  left: 120rem;
+
+  &.active {
+    left: 208rem;
+  }
+}
+
+.persona {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1014rem;
+  height: 875rem;
+  transition: all .3s ease-in-out;
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 842rem;
+    height: 556rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform-origin: 33.7% 100%;
+      transition: all .8s ease-in-out;
+    }
+
+    &-blue {
+      transform: rotate(-180deg);
+    }
+
+    &-yellow {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transition: all .4s ease-in-out;
+
+    &--2 {
+      opacity: 0;
+    }
+
+    &--3 {
+      opacity: 0;
+    }
+
+    &--4 {
+      opacity: 0;
+    }
+  }
+
+  &.epilepsia {
+    .persona__bg-blue {
+      transform: rotate(0deg);
+      z-index: 1;
+    }
+
+    .persona__img--1 {
+      opacity: 1;
+    }
+
+    .persona__img--2 {
+      opacity: 0;
+    }
+
+    .persona__img--3 {
+      opacity: 0;
+    }
+
+    .persona__img--4 {
+      opacity: 0;
+    }
+  }
+
+  &.bipolar {
+    .persona__bg-yellow {
+      transform: rotate(0deg);
+      z-index: 1;
+    }
+
+    .persona__img--1 {
+      opacity: 0;
+    }
+
+    .persona__img--2 {
+      opacity: 1;
+    }
+    
+    .persona__img--3 {
+      opacity: 0;
+    }
+
+    .persona__img--4 {
+      opacity: 0;
+    }
+  }
+
+  &.age-2-12 {
+    .persona__bg-blue {
+      transform: rotate(0deg);
+      z-index: 1;
+    }
+
+    .persona__img--1 {
+      opacity: 0;
+    }
+
+    .persona__img--2 {
+      opacity: 0;
+    }
+    
+    .persona__img--3 {
+      opacity: 1;
+    }
+
+    .persona__img--4 {
+      opacity: 0;
+    }
+  }
+
+  &.age-12-18 {
+    .persona__bg-blue {
+      transform: rotate(0deg);
+      z-index: 1;
+    }
+
+    .persona__img--1 {
+      opacity: 0;
+    }
+
+    .persona__img--2 {
+      opacity: 0;
+    }
+    
+    .persona__img--3 {
+      opacity: 0;
+    }
+
+    .persona__img--4 {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    left: -106rem;
+  }
+}
+
+.btnBack {
+  position: absolute;
+  top: 39rem;
+  left: 120rem;
+  width: 56rem;
+  height: 56rem;
+  cursor: pointer;
+  z-index: 5;
+  filter: drop-shadow(0rem 0rem 12rem rgba(0, 0, 0, 0.1));
+  transition: all .3s ease-in-out;
+  display: none;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.active {
+    display: block;
+  }
+}
