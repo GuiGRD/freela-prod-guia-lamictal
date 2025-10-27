@@ -145,6 +145,12 @@ p {
   }
 }
 
+body.bipolar {
+ .img-logo {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(5%) saturate(18%) hue-rotate(113deg) brightness(106%) contrast(104%);
+  }
+}
+
 .persona {
   position: absolute;
   left: 0;

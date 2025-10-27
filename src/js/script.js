@@ -2,21 +2,12 @@ const opcoesPorIdade = {
   '2-12': [
     { value: 'nenhum', label: 'Nenhum' },
     { value: 'atazanavir-ritonavir', label: 'Atazanavir/ritonavir' },
-    // { value: 'bupropiona', label: 'Bupropiona' },
     { value: 'carbamazepina', label: 'Carbamazepina' },
-    // { value: 'etinilestradiol-levonorgestrel', label: 'Etinilestradiol/levonorgestrel' },
-    // { value: 'gabapentina', label: 'Gabapentina' },
-    // { value: 'lacosamida', label: 'Lacosamida' },
-    // { value: 'levetiracetam', label: 'Levetiracetam' },
-    // { value: 'litio', label: 'Lítio' },
     { value: 'lopinavir-ritonavir', label: 'Lopinavir/ritonavir' },
-    // { value: 'olanzapina', label: 'Olanzapina' },
     { value: 'oxcarbazepina', label: 'Oxcarbazepina' },
     { value: 'paracetamol', label: 'Paracetamol' },
-    // { value: 'perampanel', label: 'Perampanel' },
     { value: 'fenobarbital', label: 'Fenobarbital' },
     { value: 'fenitoina', label: 'Fenitoína' },
-    // { value: 'pregabalina', label: 'Pregabalina' },
     { value: 'primidona', label: 'Primidona' },
     { value: 'rifampicina', label: 'Rifampicina' },
     { value: 'topiramato', label: 'Topiramato' },
@@ -25,21 +16,16 @@ const opcoesPorIdade = {
   '12-18': [
     { value: 'nenhum', label: 'Nenhum' },
     { value: 'atazanavir-ritonavir', label: 'Atazanavir/ritonavir' },
-    // { value: 'bupropiona', label: 'Bupropiona' },
     { value: 'carbamazepina', label: 'Carbamazepina' },
-    // { value: 'etinilestradiol-levonorgestrel', label: 'Etinilestradiol/levonorgestrel' },
     { value: 'gabapentina', label: 'Gabapentina' },
     { value: 'lacosamida', label: 'Lacosamida' },
     { value: 'levetiracetam', label: 'Levetiracetam' },
-    // { value: 'litio', label: 'Lítio' },
     { value: 'lopinavir-ritonavir', label: 'Lopinavir/ritonavir' },
-    // { value: 'olanzapina', label: 'Olanzapina' },
     { value: 'oxcarbazepina', label: 'Oxcarbazepina' },
     { value: 'paracetamol', label: 'Paracetamol' },
     { value: 'perampanel', label: 'Perampanel' },
     { value: 'fenobarbital', label: 'Fenobarbital' },
     { value: 'fenitoina', label: 'Fenitoína' },
-    // { value: 'pregabalina', label: 'Pregabalina' },
     { value: 'primidona', label: 'Primidona' },
     { value: 'rifampicina', label: 'Rifampicina' },
     { value: 'topiramato', label: 'Topiramato' },
@@ -68,6 +54,31 @@ const opcoesPorIdade = {
     { value: 'rifampicina', label: 'Rifampicina' },
     { value: 'topiramato', label: 'Topiramato' },
     { value: 'outra', label: 'Outra' },
+  ],
+};
+
+const opcoesBipolarSlct1 = {
+  'quero-iniciar-com-lamictal': [
+    { value: 'quero-iniciar-medicacao-concomitante', label: 'Quero iniciar medicação concomitante' },
+    { value: 'quero-suspender-medicacao-concomitante', label: 'Quero suspender medicação concomitante' },
+    { value: 'quero-iniciar-monoterapia', label: 'Quero iniciar monoterapia' },
+  ],
+  'paciente-ja-toma-lamictal': [
+    { value: 'quero-iniciar-medicacao-concomitante', label: 'Quero iniciar medicação concomitante' },
+    { value: 'quero-suspender-medicacao-concomitante', label: 'Quero suspender medicação concomitante' },
+  ],
+};
+
+const opcoesBipolarSlct2 = {
+  'quero-iniciar-com-lamictal_quero-iniciar-medicacao-concomitante': [
+    { value: 'quero-iniciar-medicacao-concomitante', label: 'Quero iniciar medicação concomitante' },
+    { value: 'quero-suspender-medicacao-concomitante', label: 'Quero suspender medicação concomitante' },
+    { value: 'quero-iniciar-monoterapia', label: 'Quero iniciar monoterapia' },
+  ],
+  'quero-iniciar-com-lamictal_quero-iniciar-medicacao-concomitante': [
+    { value: 'quero-iniciar-medicacao-concomitante', label: 'Quero iniciar medicação concomitante' },
+    { value: 'quero-suspender-medicacao-concomitante', label: 'Quero suspender medicação concomitante' },
+    { value: 'quero-iniciar-monoterapia', label: 'Quero iniciar monoterapia' },
   ],
 };
 
@@ -112,6 +123,20 @@ function atualizarOpcoes(idade) {
   choices1.removeActiveItems();
   choices1.clearChoices();
   choices1.setChoices(opcoesPorIdade[idade], 'value', 'label', true);
+}
+
+function atualizarOpcoesBipolar(slct1, slct2) {
+  if(slct1) {
+    choices3.removeActiveItems();
+    choices3.clearChoices();
+    choices3.setChoices(opcoesBipolarSlct1[slct1], 'value', 'label', true);
+  } else  if (slct1 && slct2) {
+    choices4.removeActiveItems();
+    choices4.clearChoices();
+    choices4.setChoices(opcoesBipolarSlct2[slct1+'_'+slct2], 'value', 'label', true);
+  }
+  
+  
 }
 
 function checkFormEpilepsiaValidity() {
@@ -180,6 +205,9 @@ $(document).ready(function() {
 
   $('#bipolar-select-1, #bipolar-select-2, #bipolar-select-3').on('change', function() {
     checkFormBipolarValidity();
+    let slct1 = $("#bipolar-select-1").val();
+    let slct2 = $("#bipolar-select-2").val();
+    atualizarOpcoesBipolar(slct1, slct2);
   });
 
   $('input[name="idade"]').on('change', function() {
@@ -295,6 +323,24 @@ $(document).ready(function() {
     });
 
     $('body').removeClass('default bipolar').addClass('epilepsia');
+
+    $('.jsPersona').addClass('active');
+  });
+
+  
+  $('.jsSubmitBipolar').on('click', function() {
+    const $form = $('.section-form-bipolar form');
+
+    let select1 = $form.find('#bipolar-select-1').val();
+    let select2 = $form.find('#bipolar-select-2').val();
+    let select3 = $form.find('#bipolar-select-3').val()
+
+    $('#sct-form-bipolar').fadeOut('fast', function() {
+      $('#sct-slides-bipolar').fadeIn('medium');
+      $(`.slide[data-slide=bipolar_${select1}_${select2}_${select3}]`).fadeIn('medium');
+    });
+
+    $('body').removeClass('default epilepsia').addClass('bipolar');
 
     $('.jsPersona').addClass('active');
   });
