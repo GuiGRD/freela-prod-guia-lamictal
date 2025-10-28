@@ -186,4 +186,39 @@
       }
     }
   }
+
+  .menu {
+    position: absolute;
+    top: 46rem;
+    left: 1685rem;
+    width: 56rem;
+    height: auto;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+
+    svg {
+      border-radius: 50%;
+      width: 56rem;
+      height: 58rem;
+      height: auto;
+      transition: all .3s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        background-color: $color-blue;
+
+        rect {
+          stroke: $color-blue;
+        }
+
+        path {
+          stroke: $color-secondary;
+        }
+      }
+    }
+  }
 }

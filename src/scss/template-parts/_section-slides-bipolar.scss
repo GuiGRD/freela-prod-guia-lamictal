@@ -20,6 +20,7 @@
 
       h3 {
         margin-bottom: 16rem;
+        color: $color-yellow;
       }
 
       .breadcrumb {
@@ -32,15 +33,24 @@
           font-family: $font-GSKPrecision;
           font-weight: 400;
           font-size: 20rem;
-          color: $color-blue;
+          color: $color-yellow;
           margin-right: 16rem;
           padding: 12rem 27rem;
-          border: solid 2rem $color-blue;
+          border: solid 2rem $color-yellow;
           border-radius: 10rem;
           white-space: nowrap;
 
           &:last-child {
             margin-right: 0;
+          }
+        }
+
+        &.width {
+          max-width: 867rem;
+          flex-wrap: wrap;
+
+          span {
+            margin-bottom: 16px;
           }
         }
       }
@@ -50,8 +60,7 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 671rem;
-        min-height: 671rem;
+        min-height: 532rem;
         transition: all .3s ease-in-out;
 
         .table {
@@ -77,10 +86,9 @@
             }
 
             &--header {
-              background-color: $color-blue;
+              background-color: $color-yellow;
 
               p {
-                color: $color-secondary;
                 font-weight: 100;
 
                 strong {
@@ -98,14 +106,36 @@
               }
             }
           }
+
+          &--2 {
+            width: 1111rem;
+            grid-template-columns: repeat(4, 1fr);
+          }
+
+          &--3 {
+            width: 1058rem;
+            grid-template-columns: repeat(3, 1fr);
+          }
+
+          &--4 {
+            width: 1112rem;
+            grid-template-columns: repeat(2, 1fr);
+
+            .table__item {
+              p {
+                text-align: left;
+              }
+            }
+          }
         }
 
         .txt-ref {
           font-weight: 300;
           font-size: 14rem;
           width: 1065rem;
-          margin-bottom: 1em;
+          margin-top: auto;
           margin-left: auto;
+          color: $color-secondary;
         }
 
         .btn-content {
@@ -130,7 +160,6 @@
           background-color: $color-secondary;
           border-radius: 16rem;
           padding: 36rem 29rem 36rem 39rem;
-          min-height: 546rem;
           margin-bottom: 62rem;
           filter: drop-shadow(5rem 5rem 12rem rgb(0, 0, 0, 0.1));
           border: solid 1rem #D6D6D6;
@@ -148,41 +177,42 @@
             height: 2rem;
             margin: 24rem auto;
           }
-
-          &--2 {
-            margin-top: 101rem;
-            height: auto;
-            min-height: auto;
-          }
-        }
-
-        &--1 {
-          transition-delay: 0.3s;
-        }
-
-        &--2 {
-          position: absolute;
-          left: 0;
-          top: 181rem;
-          transform: translateY(10%);
-          opacity: 0;
-          pointer-events: none;
         }
       }
     }
+  }
 
-    &.switch {
-      .content--1 {
-        opacity: 0;
-        pointer-events: none;
-        transition-delay: 0s;
-      }
+  .menu {
+    position: absolute;
+    top: 46rem;
+    left: 1685rem;
+    width: 56rem;
+    height: auto;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0;
+    background-color: transparent;
 
-      .content--2 {
-        transform: translateY(0%);
-        opacity: 1;
-        pointer-events: all;
-        transition-delay: 0.3s;
+    svg {
+      border-radius: 50%;
+      width: 56rem;
+      height: 58rem;
+      height: auto;
+      transition: all .3s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        background-color: #A98901;
+
+        rect {
+          stroke: #A98901;
+        }
+
+        path {
+          stroke: $color-secondary;
+        }
       }
     }
   }

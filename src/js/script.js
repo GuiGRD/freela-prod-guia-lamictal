@@ -58,6 +58,11 @@ const opcoesPorIdade = {
 };
 
 const opcoesBipolarSlct1 = {
+  '': [
+    { value: 'quero-iniciar-medicacao-concomitante', label: 'Quero iniciar medicação concomitante' },
+    { value: 'quero-suspender-medicacao-concomitante', label: 'Quero suspender medicação concomitante' },
+    { value: 'quero-iniciar-monoterapia', label: 'Quero iniciar monoterapia' },
+  ],
   'quero-iniciar-com-lamictal': [
     { value: 'quero-iniciar-medicacao-concomitante', label: 'Quero iniciar medicação concomitante' },
     { value: 'quero-suspender-medicacao-concomitante', label: 'Quero suspender medicação concomitante' },
@@ -71,14 +76,84 @@ const opcoesBipolarSlct1 = {
 
 const opcoesBipolarSlct2 = {
   'quero-iniciar-com-lamictal_quero-iniciar-medicacao-concomitante': [
-    { value: 'quero-iniciar-medicacao-concomitante', label: 'Quero iniciar medicação concomitante' },
-    { value: 'quero-suspender-medicacao-concomitante', label: 'Quero suspender medicação concomitante' },
-    { value: 'quero-iniciar-monoterapia', label: 'Quero iniciar monoterapia' },
+    { value: 'aripiprazol', label: 'Aripiprazol' },
+    { value: 'atazanavir-ritonavir', label: 'Atazanavir/ritonavir' },
+    { value: 'bupropiona', label: 'Bupropiona' },
+    { value: 'carbamazepina', label: 'Carbamazepina' },
+    { value: 'etinilestradiol-levonorgestrel', label: 'Etinilestradiol/levonorgestrel' },
+    { value: 'gabapentina', label: 'Gabapentina' },
+    { value: 'levetiracetam', label: 'Levetiracetam' },
+    { value: 'litio', label: 'Lítio' },
+    { value: 'lopinavir-ritonavir', label: 'Lopinavir/ritonavir' },
+    { value: 'olanzapina', label: 'Olanzapina' },
+    { value: 'oxcarbazepina', label: 'Oxcarbazepina' },
+    { value: 'perampanel', label: 'Perampanel' },
+    { value: 'fenobarbital', label: 'Fenobarbital' },
+    { value: 'rifampicina', label: 'Rifampicina' },
+    { value: 'topiramato', label: 'Topiramato' },
+    { value: 'valproato', label: 'Valproato' },
+    { value: 'outro', label: 'Outro' },
   ],
-  'quero-iniciar-com-lamictal_quero-iniciar-medicacao-concomitante': [
-    { value: 'quero-iniciar-medicacao-concomitante', label: 'Quero iniciar medicação concomitante' },
-    { value: 'quero-suspender-medicacao-concomitante', label: 'Quero suspender medicação concomitante' },
-    { value: 'quero-iniciar-monoterapia', label: 'Quero iniciar monoterapia' },
+  'quero-iniciar-com-lamictal_quero-suspender-medicacao-concomitante': [
+    { value: 'aripiprazol', label: 'Aripiprazol' },
+    { value: 'atazanavir-ritonavir', label: 'Atazanavir/ritonavir' },
+    { value: 'bupropiona', label: 'Bupropiona' },
+    { value: 'carbamazepina', label: 'Carbamazepina' },
+    { value: 'etinilestradiol-levonorgestrel', label: 'Etinilestradiol/levonorgestrel' },
+    { value: 'gabapentina', label: 'Gabapentina' },
+    { value: 'levetiracetam', label: 'Levetiracetam' },
+    { value: 'litio', label: 'Lítio' },
+    { value: 'lopinavir-ritonavir', label: 'Lopinavir/ritonavir' },
+    { value: 'olanzapina', label: 'Olanzapina' },
+    { value: 'oxcarbazepina', label: 'Oxcarbazepina' },
+    { value: 'perampanel', label: 'Perampanel' },
+    { value: 'fenobarbital', label: 'Fenobarbital' },
+    { value: 'rifampicina', label: 'Rifampicina' },
+    { value: 'topiramato', label: 'Topiramato' },
+    { value: 'valproato', label: 'Valproato' },
+    { value: 'outro', label: 'Outro' },
+  ],
+  'quero-iniciar-com-lamictal_quero-iniciar-monoterapia': [
+    { value: 'nenhum', label: 'Nenhum' },
+  ],
+  'paciente-ja-toma-lamictal_quero-iniciar-medicacao-concomitante': [
+    { value: 'aripiprazol', label: 'Aripiprazol' },
+    { value: 'atazanavir-ritonavir', label: 'Atazanavir/ritonavir' },
+    { value: 'bupropiona', label: 'Bupropiona' },
+    { value: 'carbamazepina', label: 'Carbamazepina' },
+    { value: 'etinilestradiol-levonorgestrel', label: 'Etinilestradiol/levonorgestrel' },
+    { value: 'gabapentina', label: 'Gabapentina' },
+    { value: 'haloperidol', label: 'Haloperidol' },
+    { value: 'levetiracetam', label: 'Levetiracetam' },
+    { value: 'litio', label: 'Lítio' },
+    { value: 'lopinavir-ritonavir', label: 'Lopinavir/ritonavir' },
+    { value: 'olanzapina', label: 'Olanzapina' },
+    { value: 'oxcarbazepina', label: 'Oxcarbazepina' },
+    { value: 'perampanel', label: 'Perampanel' },
+    { value: 'fenobarbital', label: 'Fenobarbital' },
+    { value: 'rifampicina', label: 'Rifampicina' },
+    { value: 'topiramato', label: 'Topiramato' },
+    { value: 'valproato', label: 'Valproato' },
+    { value: 'outro', label: 'Outro' },
+  ],
+  'paciente-ja-toma-lamictal_quero-suspender-medicacao-concomitante': [
+    { value: 'aripiprazol', label: 'Aripiprazol' },
+    { value: 'bupropiona', label: 'Bupropiona' },
+    { value: 'carbamazepina', label: 'Carbamazepina' },
+    { value: 'etinilestradiol-levonorgestrel', label: 'Etinilestradiol/levonorgestrel' },
+    { value: 'gabapentina', label: 'Gabapentina' },
+    { value: 'haloperidol', label: 'Haloperidol' },
+    { value: 'levetiracetam', label: 'Levetiracetam' },
+    { value: 'litio', label: 'Lítio' },
+    { value: 'lopinavir-ritonavir', label: 'Lopinavir/ritonavir' },
+    { value: 'olanzapina', label: 'Olanzapina' },
+    { value: 'oxcarbazepina', label: 'Oxcarbazepina' },
+    { value: 'perampanel', label: 'Perampanel' },
+    { value: 'fenobarbital', label: 'Fenobarbital' },
+    { value: 'rifampicina', label: 'Rifampicina' },
+    { value: 'topiramato', label: 'Topiramato' },
+    { value: 'valproato', label: 'Valproato' },
+    { value: 'outro', label: 'Outro' },
   ],
 };
 
@@ -125,18 +200,25 @@ function atualizarOpcoes(idade) {
   choices1.setChoices(opcoesPorIdade[idade], 'value', 'label', true);
 }
 
-function atualizarOpcoesBipolar(slct1, slct2) {
+function atualizarOpcoesBipolar1(slct1) {
   if(slct1) {
     choices3.removeActiveItems();
     choices3.clearChoices();
     choices3.setChoices(opcoesBipolarSlct1[slct1], 'value', 'label', true);
-  } else  if (slct1 && slct2) {
+  } else {
+    choices3.removeActiveItems();
+    choices3.clearChoices();
+    choices3.setChoices(opcoesBipolarSlct1[''], 'value', 'label', true);
+  }
+  
+}
+
+function atualizarOpcoesBipolar2(slct1, slct2) {
+  if(slct1 && slct2) {
     choices4.removeActiveItems();
     choices4.clearChoices();
     choices4.setChoices(opcoesBipolarSlct2[slct1+'_'+slct2], 'value', 'label', true);
   }
-  
-  
 }
 
 function checkFormEpilepsiaValidity() {
@@ -182,20 +264,52 @@ document.addEventListener("DOMContentLoaded", () => {
 $(document).ready(function() {
   document.querySelector('#form-epilepsia').reset();
 
-  // var swiper3 = new Swiper(".swiper-materiais", {
-  //   slidesPerView: "auto",
-  //   navigation: {
-  //     nextEl: ".swiper-button-next-materiais",
-  //     prevEl: ".swiper-button-prev-materiais",
-  //   },
-  // });
+  var swiper1 = new Swiper(".swiper-epilepsia", {
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-epilepsia",
+      prevEl: ".swiper-button-prev-epilepsia",
+    },
+    pagination: {
+      el: ".swiper-pagination-epilepsia",
+    },
+  });
+
+  var swiper2 = new Swiper(".swiper-bipolar", {
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-bipolar",
+      prevEl: ".swiper-button-prev-bipolar",
+    },
+    pagination: {
+      el: ".swiper-pagination-bipolar",
+    },
+  });
   
-  $(".jsOpenMenu").on("click", function() {
-    $(".menu").addClass("active");
+  $(".jsOpenMenuEpilepsia").on("click", function() {
+    $('.overlay').fadeIn("medium");
+    $(".jsMenuEpilepsia").addClass("active");
+  });
+
+  $(".jsOpenMenuBipolar").on("click", function() {
+    $('.overlay').fadeIn("medium");
+    $(".jsMenuBipolar").addClass("active");
   });
 
   $(".menu__close").on("click", function() {
-    $(".menu").removeClass("active");
+    $('.overlay').fadeOut("medium");
+    $(this).parent().removeClass("active");
+  });
+
+  $(".overlay").on("click", function() {
+    $('.overlay').fadeOut("medium");
+    $('.menu').removeClass("active");
   });
 
   $('.section-form-epilepsia form input[type="radio"]').on('change', checkFormEpilepsiaValidity);
@@ -203,11 +317,22 @@ $(document).ready(function() {
     checkFormEpilepsiaValidity();
   });
 
-  $('#bipolar-select-1, #bipolar-select-2, #bipolar-select-3').on('change', function() {
+  $('#bipolar-select-1').on('change', function() {
+    checkFormBipolarValidity();
+    let slct1 = $(this).val();
+    atualizarOpcoesBipolar1(slct1);
+  });
+
+  $('#bipolar-select-1, #bipolar-select-2').on('change', function() {
+    choices4.removeActiveItems();
     checkFormBipolarValidity();
     let slct1 = $("#bipolar-select-1").val();
     let slct2 = $("#bipolar-select-2").val();
-    atualizarOpcoesBipolar(slct1, slct2);
+    atualizarOpcoesBipolar2(slct1, slct2);
+  });
+
+  $('#bipolar-select-1, #bipolar-select-2, #bipolar-select-3').on('change', function() {
+    checkFormBipolarValidity();
   });
 
   $('input[name="idade"]').on('change', function() {
@@ -351,5 +476,19 @@ $(document).ready(function() {
 
   $('.jsContentBack').on('click', function() {
     $(this).parent().parent().parent().removeClass('switch');
+  });
+
+  $('.jsBackStart').on('click', function() {
+    location.reload();
+  });
+
+  $('.JsOpenPopup').on('click', function() {
+    let popup = $(this).data('popup');
+
+    $(`.popup[data-popup="${popup}"]`).fadeIn('medium')
+  });
+
+  $('.jsClosePopup').on('click', function() {
+    $(`.popup`).fadeOut('fast')
   });
 });
