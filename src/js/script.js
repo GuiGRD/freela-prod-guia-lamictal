@@ -229,7 +229,8 @@ function checkFormEpilepsiaValidity() {
   
   const isValproatoSelected = $form.find('input[name="valproato"]:checked').length > 0;
   
-  const isMedicationSelected = $form.find('#medicamento-concomitante').val() !== null && $form.find('#medicamento-concomitante').val() !== '';
+  // const isMedicationSelected = $form.find('#medicamento-concomitante').val() !== null && $form.find('#medicamento-concomitante').val() !== '';
+  const isMedicationSelected = choices1.getValue() !== undefined;
 
   if (isAgeSelected && isValproatoSelected && isMedicationSelected) {
     $submitButton.removeClass('disabled');
@@ -241,10 +242,10 @@ function checkFormEpilepsiaValidity() {
 function checkFormBipolarValidity() {
   const $form = $('.section-form-bipolar form');
   const $submitButton = $form.find('.jsSubmitBipolar');
-  
-  const is1Selected = $form.find('#bipolar-select-1').val() !== null && $form.find('#bipolar-select-1').val() !== '';
-  const is2Selected = $form.find('#bipolar-select-2').val() !== null && $form.find('#bipolar-select-2').val() !== '';
-  const is3Selected = $form.find('#bipolar-select-3').val() !== null && $form.find('#bipolar-select-3').val() !== '';
+
+  const is1Selected = choices2.getValue() !== undefined;
+  const is2Selected = choices3.getValue() !== undefined;
+  const is3Selected = choices4.getValue() !== undefined;
 
   if (is1Selected && is2Selected && is3Selected) {
     $submitButton.removeClass('disabled');
@@ -262,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 $(document).ready(function() {
+  choices1.removeActiveItems();
   document.querySelector('#form-epilepsia').reset();
 
   var swiper1 = new Swiper(".swiper-epilepsia", {
@@ -486,6 +488,34 @@ $(document).ready(function() {
     let popup = $(this).data('popup');
 
     $(`.popup[data-popup="${popup}"]`).fadeIn('medium')
+
+    var swiper1 = new Swiper(".swiper-epilepsia", {
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-epilepsia",
+        prevEl: ".swiper-button-prev-epilepsia",
+      },
+      pagination: {
+        el: ".swiper-pagination-epilepsia",
+      },
+    });
+
+    var swiper2 = new Swiper(".swiper-bipolar", {
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-bipolar",
+        prevEl: ".swiper-button-prev-bipolar",
+      },
+      pagination: {
+        el: ".swiper-pagination-bipolar",
+      },
+    });
   });
 
   $('.jsClosePopup').on('click', function() {

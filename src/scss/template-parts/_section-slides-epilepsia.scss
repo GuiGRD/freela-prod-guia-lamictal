@@ -62,7 +62,7 @@
           margin-bottom: 19rem;
 
           &__item {
-            padding: 24rem 48rem;
+            padding: 24rem 46rem;
             border-radius: 16rem;
             background-color: $color-secondary;
             display: flex;
@@ -74,6 +74,10 @@
               font-size: 24rem;
               text-align: center;
               margin: 0;
+
+              strong {
+                font-weight: 700;
+              }
             }
 
             &--header {
